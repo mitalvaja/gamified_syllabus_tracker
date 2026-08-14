@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamified Syllabus Tracker & Learning Games Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header Bar -->
+    <header class="app-header" id="appHeader">
+      <div class="header-titles">
+        <h1 id="headerGreeting">Good Morning, Mital 👋</h1>
+        <p id="headerSubtitle">Universal Learning & Games Arena</p>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="showScreen('leaderboard')" title="Leaderboard">🏆</button>
+        <button class="icon-btn" onclick="showScreen('reports')" title="Reports">📊</button>
+        <button class="icon-btn notif-btn" onclick="toggleNotifs()" title="Notifications">
+          🔔
+          <span class="badge-dot" id="notifDot">3</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dynamic Screen Content -->
+    <main class="app-body" id="mainContent">
+      <!-- Injected via JavaScript -->
+    </main>
+
+    <!-- Bottom Navigation Bar (5 Core Tabs) -->
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="nav-item active" onclick="showScreen('home')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </button>
+      <button class="nav-item" onclick="showScreen('syllabus')">
+        <span class="nav-icon">📖</span>
+        <span class="nav-label">Syllabus</span>
+      </button>
+      <button class="nav-item" onclick="showScreen('games')">
+        <span class="nav-icon">🎮</span>
+        <span class="nav-label">Games</span>
+      </button>
+      <button class="nav-item" onclick="showScreen('planner')">
+        <span class="nav-icon">📅</span>
+        <span class="nav-label">Planner</span>
+      </button>
+      <button class="nav-item" onclick="showScreen('profile')">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Profile</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Notification Drawer Modal -->
+  <div class="modal-overlay" id="notifModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Notifications & Reminders 🔔</h3>
+        <button class="close-btn" onclick="toggleNotifs()">✕</button>
+      </div>
+      <div class="notif-list" id="notifList"></div>
+    </div>
+  </div>
+
+  <!-- Level Up Celebration Modal -->
+  <div class="modal-overlay" id="levelUpModal">
+    <div class="modal-card text-center level-up-box">
+      <div class="level-icon-big" id="lvlUpIcon">🚀</div>
+      <h2 class="level-up-tag">🎉 LEVEL UP! 🎉</h2>
+      <h3 id="lvlUpTitle">Level 3 — Explorer</h3>
+      <p>Congratulations! You earned enough XP to reach the next tier in your learning mastery!</p>
+      <button class="btn-primary" onclick="closeLevelUp()">Claim Rewards & Continue 🚀</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
